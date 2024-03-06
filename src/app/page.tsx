@@ -6,18 +6,13 @@ import RightPanel from "../../components/rightSide/RightPanel";
 import { Provider } from "react-redux";
 import { useSelector } from "react-redux";
 import store from "../../redux/store";
+import Index from "../../components/Index";
+
 export default function Home() {
   return (
     <Provider store={store}>
       <main>
-        <Row>
-          <Col span={12}>
-            <IndexLeftPanel></IndexLeftPanel>
-          </Col>
-          <Col span={12}>
-            <RightPanel></RightPanel>
-          </Col>
-        </Row>
+        <Index></Index>
       </main>
     </Provider>
   );

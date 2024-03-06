@@ -4,9 +4,8 @@ import ManagerPart from "./firstPage/ManagerPart";
 import { Button, ConfigProvider, Form, Typography } from "antd";
 import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import { imageData } from "../../redux/slices/imageSlice";
+import UploadImage from "./firstPage/UploadImage/UploadImage";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -22,18 +21,11 @@ const onFinishFailed = (errorInfo: any) => {
   console.log("Failed:", errorInfo);
 };
 const IndexLeftPanel = () => {
-  const dispatch = useDispatch();
-  const handleIncrement = () => {
-    dispatch(imageData(""));
-  };
-  const image = useSelector((state: any) => state.image);
   return (
     <div
       className="animate__animated animate__fadeIn"
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <Typography> {image}</Typography>
-      <button onClick={handleIncrement}>Increment</button>
       <ManagerPart />
       <ConfigProvider
         theme={{
@@ -53,7 +45,7 @@ const IndexLeftPanel = () => {
           name="basic"
           labelCol={{ span: 16 }}
           wrapperCol={{ span: 24 }}
-          style={{ maxWidth: 600 }}
+          style={{ maxWidth: "100%" }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
