@@ -41,7 +41,7 @@ const IndexLeftPanel = () => {
           <li key={user}>{user}</li>
         ))}
       </ul> */}
-      <ManagerPart />
+
       <ConfigProvider
         theme={{
           components: {
@@ -68,6 +68,7 @@ const IndexLeftPanel = () => {
           scrollToFirstError
           layout="vertical"
         >
+          <ManagerPart />
           <PersonalInformationCollapse />
           <ContactDetails />
           <CoApplicantInformationCollapse />

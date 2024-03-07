@@ -1,4 +1,4 @@
-import { Row, Col, Skeleton } from "antd";
+import { Row, Col, Skeleton, Divider } from "antd";
 import React from "react";
 import IndexLeftPanel from "./leftSide/IndexLeftPanel";
 import RightPanel from "./rightSide/RightPanel";
@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 // import { getOcrData } from "../redux/actions/mainActions";
 import "animate.css";
 import { useAntdBreakPoints } from "../utils/BreakPoints";
-
 
 const Index = () => {
   const dispatch = useDispatch<any>();
@@ -27,8 +26,8 @@ const Index = () => {
         <Col style={{ margin: "auto" }} span={14}>
           {/* {getImageFiles.length === 0 && <IndexLeftPanel />} */}
         </Col>
-
         <Col md={12}>
+          <Divider></Divider>
           <IndexLeftPanel />
         </Col>
         <Col md={12}>

@@ -21,9 +21,7 @@ const ContactDetailsForm = () => {
   // States
   const [showOtherInput, setShowOtherInput] = useState(false);
   const getOcrData = useSelector((state: any) => state.ocr.ocrData);
-
-  // console.log(getOcrData, "AllgetOcrData");
-  console.log(getOcrData && getOcrData[0]?.text?.applicant_email, "getOcrData");
+  console.log(getOcrData && getOcrData, "getOcrData");
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
@@ -117,117 +115,6 @@ const ContactDetailsForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      {/* <Row>
-        <Col md={12}>
-          <Form.Item label="Date of Birth" name="date_picker">
-            <DatePicker
-              defaultValue={dayjs("01-01-2015", dateFormat)}
-              format={dateFormat}
-            />
-          </Form.Item>
-        </Col>
-        <Col md={12}>
-          <Form.Item name="gender" label="Gender">
-            <Radio.Group>
-              <Radio value="Male">Male</Radio>
-              <Radio value="Female">Female</Radio>
-            </Radio.Group>
-          </Form.Item>
-        </Col>
-      </Row>
-      <Form.Item name="marital_status" label="Marital Status">
-        <Radio.Group>
-          <Radio value="Single">Single</Radio>
-          <Radio value="Married">Married</Radio>
-          <Radio value="Widow">Widow</Radio>
-          <Radio value="Separated">Separated</Radio>
-        </Radio.Group>
-      </Form.Item>
-      <Row>
-        <Col md={12}>
-          <Form.Item<FieldType>
-            label="Spouse's Name"
-            name="spouse_name"
-            style={{ marginRight: "10px" }}
-            // rules={[
-            //   { required: true, message: "Please input your father's name!" },
-            // ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-        <Col md={12}>
-          <Form.Item<FieldType>
-            label="Profession"
-            name="spouse_profession"
-            // rules={[
-            //   { required: true, message: "Please input your spouse_profession!" },
-            // ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-      </Row>
-      <Form.Item<FieldType>
-        label="Spouse's Work Address"
-        name="spouse_Work_Address"
-        // rules={[
-        //   { required: true, message: "Please input your spouse_profession!" },
-        // ]}
-      >
-        <Input />
-      </Form.Item>
-      <Row>
-        <Col md={12}>
-          <Form.Item<FieldType>
-            label="Spouse's or Parents Land phone"
-            name="spouse_land_phone"
-            style={{ marginRight: "10px" }}
-            // rules={[
-            //   { required: true, message: "Please input your father's name!" },
-            // ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-        <Col md={12}>
-          <Form.Item<FieldType>
-            label="Spouse's or Parents Mobile phone"
-            name="spouse_mobile_phone"
-            // rules={[
-            //   { required: true, message: "Please input your spouse_profession!" },
-            // ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-      </Row>
-      <Form.Item name="highest_education_level" label="Highest Education Level">
-        <Radio.Group>
-          <Radio value="SSC">SSC</Radio>
-          <Radio value="HSC">HSC</Radio>
-          <Radio value="Graduate">Graduate</Radio>
-          <Radio value="Post Graduate">Post Graduate</Radio>
-          <Radio value="Others">Others</Radio>
-        </Radio.Group>
-      </Form.Item>
-      <Form.Item name="employment_status" label="Employment Status">
-        <Radio.Group>
-          <Radio value="Salaried">Salaried</Radio>
-          <Radio value="Business Person">Business Person</Radio>
-          <Radio value="Professional">Professional</Radio>
-        </Radio.Group>
-      </Form.Item>{" "}
-      <Form.Item name="identification_document" label="Identification Document">
-        <Radio.Group>
-          <Radio value="Passport">Passport</Radio>
-          <Radio value="Voter ID">Voter ID</Radio>
-          <Radio value="Driving License">Driving License</Radio>
-          <Radio value="Commisionar's Certificate">
-            Commisionar&apos;s Certificate
-          </Radio>
-        </Radio.Group>
-      </Form.Item> */}
     </>
   );
 };

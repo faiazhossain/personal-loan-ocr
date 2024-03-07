@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, ConfigProvider, Image, Modal, Upload } from "antd";
 import type { GetProp, UploadFile, UploadProps } from "antd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { imageData } from "../../../../redux/slices/imageSlice";
 import axios from "axios";
 import { API } from "../../../../app.config";
 import { setOcrData } from "../../../../redux/slices/ocrSlice";
+import { getOcrData } from "../../../../redux/actions/mainActions";
 
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 
@@ -23,7 +24,7 @@ const UploadImage = () => {
 
   // Declare formData
   let formData = new FormData();
-  // const getOcrFiles = useSelector((state: any) => state.ocr.ocrData);
+  const getOcrFiles = useSelector((state: any) => state.ocr.ocrData);
 
   // const handleClick = () => {
   //   dispatch(getOcrData("city", "loan", "true"));
@@ -32,7 +33,7 @@ const UploadImage = () => {
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-
+  const [loadings, setLoadings] = useState<boolean>(false);
   // const [files, setFiles] = useState<string[]>([]);
   const handleCancel = () => setPreviewOpen(false);
 
@@ -68,6 +69,7 @@ const UploadImage = () => {
       console.log("Please select a file");
       return;
     }
+    setLoadings(true);
 
     // Append selected `file` to FormData
     fileList.forEach((file) => {
@@ -94,9 +96,9 @@ const UploadImage = () => {
             return 0; // Keep the order unchanged
           }
         });
-
         // console.log(rearrangedArray, "faiaz");
         dispatch(setOcrData(rearrangedArray));
+        setLoadings(false);
       })
       .catch((err) => {
         console.log(err);
@@ -118,6 +120,7 @@ const UploadImage = () => {
       <div style={{ marginTop: 8 }}>Upload</div>
     </button>
   );
+
   return (
     <>
       <Upload
@@ -145,11 +148,8 @@ const UploadImage = () => {
             },
           }}
         >
-          <Button
-            style={{ marginBottom: "20px", width: "104px" }}
-            onClick={handleSubmit}
-          >
-            Submit
+          <Button loading={loadings} onClick={handleSubmit}>
+            Submit!
           </Button>
         </ConfigProvider>
       )}
