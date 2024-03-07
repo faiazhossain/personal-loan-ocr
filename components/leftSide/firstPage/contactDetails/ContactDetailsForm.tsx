@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import {
   Col,
-  DatePicker,
   Form,
   Input,
   Radio,
   Row,
-  Space,
-  Typography,
 } from "antd";
 
 type FieldType = {

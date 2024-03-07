@@ -4,6 +4,7 @@ import ManagerPart from "./firstPage/managerPart/ManagerPart";
 import { Button, ConfigProvider, Form } from "antd";
 import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
+// import { useGetUsersQuery } from "../../redux/services/userApi";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -19,11 +20,24 @@ const onFinishFailed = (errorInfo: any) => {
   console.log("Failed:", errorInfo);
 };
 const IndexLeftPanel = () => {
+  // const { data: users, isLoading, isError } = useGetUsersQuery({});
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+  // if (isError) {
+  //   return <div>Error fetching users</div>;
+  // }
+  // console.log(users, "faiaz");
   return (
     <div
       className="animate__animated animate__fadeIn"
       style={{ display: "flex", flexDirection: "column" }}
     >
+      {/* <ul>
+        {users.map((user: any) => (
+          <li key={user}>{user}</li>
+        ))}
+      </ul> */}
       <ManagerPart />
       <ConfigProvider
         theme={{

@@ -3,13 +3,17 @@ import React from "react";
 import IndexLeftPanel from "./leftSide/IndexLeftPanel";
 import RightPanel from "./rightSide/RightPanel";
 import UploadImage from "./leftSide/firstPage/UploadImage/UploadImage";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+// import { getOcrData } from "../redux/actions/mainActions";
 import "animate.css";
 import { useAntdBreakPoints } from "../utils/BreakPoints";
+
+
 const Index = () => {
+  const dispatch = useDispatch<any>();
   const { xs, sm, md, lg, xl, xxl } = useAntdBreakPoints();
   const getImageFiles = useSelector((state: any) => state.image.imageData);
-  console.log(getImageFiles);
+
   return (
     <div>
       <h1

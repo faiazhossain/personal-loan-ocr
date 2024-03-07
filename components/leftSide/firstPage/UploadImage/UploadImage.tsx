@@ -4,6 +4,7 @@ import { Image, Modal, Upload } from "antd";
 import type { GetProp, UploadFile, UploadProps } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { imageData } from "../../../../redux/slices/imageSlice";
+import { getOcrData } from "../../../../redux/actions/mainActions";
 
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 
@@ -16,7 +17,12 @@ const getBase64 = (file: FileType): Promise<string> =>
   });
 
 const UploadImage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
+  // const getOcrFiles = useSelector((state: any) => state.ocr.ocrData);
+
+  const handleClick = () => {
+    dispatch(getOcrData("city", "loan", "true"));
+  };
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
