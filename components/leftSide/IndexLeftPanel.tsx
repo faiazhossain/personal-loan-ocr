@@ -5,6 +5,7 @@ import { Button, ConfigProvider, Form } from "antd";
 import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
 // import { useGetUsersQuery } from "../../redux/services/userApi";
+import CoApplicantInformationCollapse from "./secondPage/coApplicantInformation/CoApplicantInformationCollapse";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -13,7 +14,6 @@ const onFinish = (values: any) => {
       ? values["date_picker"].format("DD-MM-YYYY")
       : "12-12-2024",
   };
-  console.log(fieldsValue, "faiaz");
 };
 
 const onFinishFailed = (errorInfo: any) => {
@@ -67,11 +67,12 @@ const IndexLeftPanel = () => {
         >
           <PersonalInformationCollapse />
           <ContactDetails />
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <CoApplicantInformationCollapse />
+          {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
-          </Form.Item>
+          </Form.Item> */}
         </Form>
       </ConfigProvider>
     </div>

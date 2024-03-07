@@ -12,6 +12,7 @@ const RightPanel = () => {
           key={index}
           src={image}
           alt=""
+          style={{ marginBottom: "20px" }}
         />
       ))}
     </div>

@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import {
-  Col,
-  Form,
-  Input,
-  Radio,
-  Row,
-} from "antd";
-
+import React, { useEffect, useState } from "react";
+import { Col, Form, Input, Radio, Row } from "antd";
+import { useSelector } from "react-redux";
 type FieldType = {
   present_address?: string;
   residence_status?: string;
@@ -19,11 +13,34 @@ type FieldType = {
   number_mobile?: string;
   email?: string;
 };
+
 const dateFormat = "DD-MM-YYYY";
 const ContactDetailsForm = () => {
+  const form = Form.useFormInstance();
+
   // States
   const [showOtherInput, setShowOtherInput] = useState(false);
+  const getOcrData = useSelector((state: any) => state.ocr.ocrData);
 
+  // console.log(getOcrData, "AllgetOcrData");
+  console.log(getOcrData && getOcrData[0]?.text?.applicant_email, "getOcrData");
+  useEffect(() => {
+    if (getOcrData.length > 0) {
+      form.setFieldsValue({
+        present_address: getOcrData[0]?.text?.applicant_present_address,
+        residence_status: getOcrData[0]?.text?.applicant_residence_status,
+        years_in_current_address:
+          getOcrData[0]?.text?.applicant_year_current_address,
+        gender: getOcrData[0]?.text?.applicant_gender,
+        permanent_address: getOcrData[0]?.text?.applicant_permanent_address,
+        work_address: getOcrData[0]?.text?.applicant_work_address,
+        number_home: getOcrData[0]?.text?.applicant_work_number,
+        number_office: getOcrData[0]?.text?.applicant_work_number2,
+        number_mobile: getOcrData[0]?.text?.applicant_mobile,
+        applicant_email: getOcrData[0]?.text?.applicant_email,
+      });
+    }
+  }, [getOcrData, form]);
   const handleEducationLevelChange = (e: any) => {
     setShowOtherInput(e.target.value === "Others");
   };
@@ -77,34 +94,26 @@ const ContactDetailsForm = () => {
       >
         <Input />
       </Form.Item>
-      <h4>Contact Number</h4>
+      {/* <h4>Contact Number</h4> */}
       <Row gutter={10}>
         <Col md={5}>
           <Form.Item name="number_home" label="Home">
-            <Radio.Group>
-              <Input />
-            </Radio.Group>
+            <Input />
           </Form.Item>
-        </Col>{" "}
+        </Col>
         <Col md={5}>
           <Form.Item name="number_office" label="Office">
-            <Radio.Group>
-              <Input />
-            </Radio.Group>
+            <Input />
           </Form.Item>
-        </Col>{" "}
+        </Col>
         <Col md={6}>
           <Form.Item name="number_mobile" label="Mobile">
-            <Radio.Group>
-              <Input />
-            </Radio.Group>
+            <Input />
           </Form.Item>
-        </Col>{" "}
+        </Col>
         <Col md={8}>
-          <Form.Item name="email" label="Email">
-            <Radio.Group>
-              <Input />
-            </Radio.Group>
+          <Form.Item name="applicant_email" label="Email">
+            <Input />
           </Form.Item>
         </Col>
       </Row>

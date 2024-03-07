@@ -1,16 +1,17 @@
 import React from "react";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
+import CoApplicantInformationForm from "./CoApplicantInformationForm";
 // import ContactDetailsForm from "./ContactDetailsForm";
 const items: CollapseProps["items"] = [
   {
     key: "1",
-    label: "B. Contact Details",
-    // children: <ContactDetailsForm />,
+    label: "B. Co-Applicant's Information",
+    children: <CoApplicantInformationForm />,
   },
 ];
 
-const ContactDetails: React.FC = () => {
+const CoApplicantInformationCollapse: React.FC = () => {
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
@@ -20,4 +21,4 @@ const ContactDetails: React.FC = () => {
   );
 };
 
-export default ContactDetails;
+export default CoApplicantInformationCollapse;

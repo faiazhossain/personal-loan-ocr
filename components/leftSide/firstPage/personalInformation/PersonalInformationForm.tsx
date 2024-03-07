@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, DatePicker, Form, Input, Radio, Row, Space } from "antd";
 import dayjs from "dayjs";
 import "animate.css";
+import { useSelector } from "react-redux";
 
 type FieldType = {
   full_name?: string;
@@ -10,6 +11,7 @@ type FieldType = {
   date_picker?: string;
   gender?: string;
   marital_status?: string;
+  employment_status?: string;
   spouse_name?: string;
   spouse_profession?: string;
   spouse_Work_Address?: string;
@@ -21,11 +23,27 @@ type FieldType = {
 const dateFormat = "DD-MM-YYYY";
 const PersonalInformationForm = () => {
   // States
+  const form = Form.useFormInstance();
   const [showOtherInput, setShowOtherInput] = useState(false);
-
+  const getOcrData = useSelector((state: any) => state.ocr.ocrData);
   const handleEducationLevelChange = (e: any) => {
     setShowOtherInput(e.target.value === "Others");
   };
+  useEffect(() => {
+    if (getOcrData.length > 0) {
+      form.setFieldsValue({
+        full_name: getOcrData[0]?.text?.applicant_name,
+        mother_name: getOcrData[0]?.text?.applicant_mother_name,
+        father_name: getOcrData[0]?.text?.applicant_father_name,
+        gender: getOcrData[0]?.text?.applicant_gender,
+        marital_status: getOcrData[0]?.text?.applicant_married_status,
+        employment_status: getOcrData[0]?.text?.applicant_employement_status,
+        spouse_name: getOcrData[0]?.text?.applicant_spouse_name,
+        spouse_mobile_phone: getOcrData[0]?.text?.applicant_spouse_number,
+        spouse_profession: getOcrData[0]?.text?.applicant_spouse_profession,
+      });
+    }
+  }, [getOcrData, form]);
 
   return (
     <>
