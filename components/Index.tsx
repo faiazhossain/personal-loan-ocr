@@ -4,6 +4,7 @@ import IndexLeftPanel from "./leftSide/IndexLeftPanel";
 import RightPanel from "./rightSide/RightPanel";
 import UploadImage from "./leftSide/firstPage/UploadImage/UploadImage";
 import { useSelector } from "react-redux";
+import "animate.css";
 
 const Index = () => {
   const getImageFiles = useSelector((state: any) => state.image.imageData);
@@ -23,19 +24,22 @@ const Index = () => {
           <IndexLeftPanel />
         </Col>
         <Col span={12}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <h4>Your uploaded document will be displayed here.</h4>
-            <Skeleton.Image
-              style={{ height: "80vh", width: "40vw" }}
-              // active={true}
-            />
-          </div>
+          {getImageFiles.length === 0 && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+              className="animate__animated animate__fadeIn animate__slow"
+            >
+              <h4>Your uploaded document will be displayed here.</h4>
+              <Skeleton.Image
+                style={{ height: "80vh", width: "40vw" }}
+                // active={true}
+              />
+            </div>
+          )}
           <RightPanel />
         </Col>
       </Row>
