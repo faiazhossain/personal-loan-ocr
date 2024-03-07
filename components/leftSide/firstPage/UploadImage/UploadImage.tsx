@@ -95,7 +95,7 @@ const UploadImage = () => {
           }
         });
 
-        console.log(rearrangedArray, "faiaz");
+        // console.log(rearrangedArray, "faiaz");
         dispatch(setOcrData(rearrangedArray));
       })
       .catch((err) => {

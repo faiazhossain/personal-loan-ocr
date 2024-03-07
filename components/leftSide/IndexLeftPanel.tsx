@@ -6,6 +6,9 @@ import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
 // import { useGetUsersQuery } from "../../redux/services/userApi";
 import CoApplicantInformationCollapse from "./secondPage/coApplicantInformation/CoApplicantInformationCollapse";
+import ProfessionalInformationSHCollapse from "./secondPage/professionalInformation_SH/ProfessionalInformationSHCollapse";
+import ProfessionalInformationBPCollapse from "./secondPage/professionalInformation_BP_SE/ProfessionalInformationBPCollapse";
+import ProfessionalInformationOtherCollapse from "./secondPage/professionalInformation_others/ProfessionalInformationOtherCollapse";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -68,6 +71,9 @@ const IndexLeftPanel = () => {
           <PersonalInformationCollapse />
           <ContactDetails />
           <CoApplicantInformationCollapse />
+          <ProfessionalInformationSHCollapse />
+          <ProfessionalInformationBPCollapse />
+          <ProfessionalInformationOtherCollapse />
           {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
               Submit
