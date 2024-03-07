@@ -10,12 +10,6 @@ type FieldType = {
   co_applicant_date_picker?: string;
   co_applicant_gender?: string;
   co_applicant_etin?: number;
-  co_applicant_marital_status?: string;
-  co_applicant_spouse_name?: string;
-  co_applicant_spouse_profession?: string;
-  co_applicant_spouse_Work_Address?: string;
-  co_applicant_spouse_land_phone?: number;
-  co_applicant_spouse_mobile_phone?: number;
   co_applicant_other_education_level?: string;
 };
 
@@ -69,7 +63,7 @@ const CoApplicantInformationForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Form.Item name="highest_education_level" label="Highest Education Level">
+      <Form.Item name="co_applicant_highest_education_level" label="Highest Education Level">
         <Radio.Group onChange={handleEducationLevelChange}>
           <Radio value="SSC">SSC</Radio>
           <Radio value="HSC">HSC</Radio>

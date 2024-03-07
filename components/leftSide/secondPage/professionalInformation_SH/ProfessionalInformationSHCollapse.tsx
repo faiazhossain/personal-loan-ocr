@@ -1,17 +1,16 @@
 import React from "react";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
-import CoApplicantInformationForm from "./CoApplicantInformationForm";
-// import ContactDetailsForm from "./ContactDetailsForm";
+import ProfessionalInformationSHForm from "./ProfessionalInformationSHForm";
 const items: CollapseProps["items"] = [
   {
     key: "1",
-    label: "C. Co-Applicant's Information",
-    children: <CoApplicantInformationForm />,
+    label: "D. Professional Information (For Service Holder)",
+    children: <ProfessionalInformationSHForm />,
   },
 ];
 
-const CoApplicantInformationCollapse: React.FC = () => {
+const ProfessionalInformationSHCollapse: React.FC = () => {
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
@@ -21,4 +20,4 @@ const CoApplicantInformationCollapse: React.FC = () => {
   );
 };
 
-export default CoApplicantInformationCollapse;
+export default ProfessionalInformationSHCollapse;
