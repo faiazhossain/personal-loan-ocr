@@ -4,6 +4,7 @@ import ManagerPart from "./firstPage/managerPart/ManagerPart";
 import { Button, ConfigProvider, Form } from "antd";
 import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
+import CoApplicantInformationCollapse from "./secondPage/coApplicantInformation/CoApplicantInformationCollapse";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -53,6 +54,7 @@ const IndexLeftPanel = () => {
         >
           <PersonalInformationCollapse />
           <ContactDetails />
+          <CoApplicantInformationCollapse />
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
               Submit
