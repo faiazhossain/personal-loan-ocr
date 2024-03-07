@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, DatePicker, Form, Input, Radio, Row, Space } from "antd";
 import dayjs from "dayjs";
 import "animate.css";
+import { useSelector } from "react-redux";
 
 type FieldType = {
   co_applicant_full_name?: string;
@@ -16,12 +17,27 @@ type FieldType = {
 const dateFormat = "DD-MM-YYYY";
 const CoApplicantInformationForm = () => {
   // States
+  const form = Form.useFormInstance();
   const [showOtherInput, setShowOtherInput] = useState(false);
-
+  const getOcrData = useSelector((state: any) => state.ocr.ocrData);
   const handleEducationLevelChange = (e: any) => {
     setShowOtherInput(e.target.value === "Others");
   };
-
+  useEffect(() => {
+    if (getOcrData.length > 0) {
+      form.setFieldsValue({
+        co_applicant_full_name: getOcrData[1]?.text?.applicant_name,
+        // mother_name: getOcrData[1]?.text?.applicant_mother_name,
+        // father_name: getOcrData[1]?.text?.applicant_father_name,
+        // gender: getOcrData[1]?.text?.applicant_gender,
+        // marital_status: getOcrData[1]?.text?.applicant_married_status,
+        // employment_status: getOcrData[1]?.text?.applicant_employement_status,
+        // spouse_name: getOcrData[1]?.text?.applicant_spouse_name,
+        // spouse_mobile_phone: getOcrData[1]?.text?.applicant_spouse_number,
+        // spouse_profession: getOcrData[1]?.text?.applicant_spouse_profession,
+      });
+    }
+  }, [getOcrData, form]);
   return (
     <>
       <Form.Item<FieldType>
@@ -63,7 +79,10 @@ const CoApplicantInformationForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Form.Item name="co_applicant_highest_education_level" label="Highest Education Level">
+      <Form.Item
+        name="co_applicant_highest_education_level"
+        label="Highest Education Level"
+      >
         <Radio.Group onChange={handleEducationLevelChange}>
           <Radio value="SSC">SSC</Radio>
           <Radio value="HSC">HSC</Radio>
