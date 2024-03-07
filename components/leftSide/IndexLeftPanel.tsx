@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import ManagerPart from "./firstPage/ManagerPart";
-import { Button, ConfigProvider, Form, Typography } from "antd";
+import ManagerPart from "./firstPage/managerPart/ManagerPart";
+import { Button, ConfigProvider, Form } from "antd";
 import ContactDetails from "./firstPage/contactDetails/ContactDetailsCollapse";
 import PersonalInformationCollapse from "./firstPage/personalInformation/PersonalInformationCollapse";
-import { imageData } from "../../redux/slices/imageSlice";
-import UploadImage from "./firstPage/UploadImage/UploadImage";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
