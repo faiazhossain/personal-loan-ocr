@@ -19,7 +19,7 @@ const Index = () => {
         className="headerText"
         style={{ textAlign: "center", textTransform: "uppercase" }}
       >
-        Personal loan for application form
+        Personal loan application form
       </h1>
       <Row gutter={10} style={{ margin: "auto", maxWidth: "1440px" }}>
         <UploadImage />

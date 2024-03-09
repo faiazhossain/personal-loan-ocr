@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, DatePicker, Form, Input, Radio, Row, Space } from "antd";
-import dayjs from "dayjs";
+import { Col, DatePicker, Form, Input, Radio, Row } from "antd";
 import "animate.css";
 import { useSelector } from "react-redux";
 
@@ -13,8 +12,6 @@ type FieldType = {
   co_applicant_etin?: number;
   co_applicant_other_education_level?: string;
 };
-
-const dateFormat = "DD-MM-YYYY";
 const CoApplicantInformationForm = () => {
   // States
   const form = Form.useFormInstance();
@@ -26,15 +23,15 @@ const CoApplicantInformationForm = () => {
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
-        co_applicant_full_name: getOcrData[1]?.text?.applicant_name,
-        // mother_name: getOcrData[1]?.text?.applicant_mother_name,
-        // father_name: getOcrData[1]?.text?.applicant_father_name,
-        // gender: getOcrData[1]?.text?.applicant_gender,
-        // marital_status: getOcrData[1]?.text?.applicant_married_status,
-        // employment_status: getOcrData[1]?.text?.applicant_employement_status,
-        // spouse_name: getOcrData[1]?.text?.applicant_spouse_name,
-        // spouse_mobile_phone: getOcrData[1]?.text?.applicant_spouse_number,
-        // spouse_profession: getOcrData[1]?.text?.applicant_spouse_profession,
+        co_applicant_full_name: getOcrData[1]?.text?.co_applicant_name,
+        co_applicant_mother_name: getOcrData[1]?.text?.co_applicant_mother_name,
+        co_applicant_father_name: getOcrData[1]?.text?.co_applicant_father_name,
+        co_applicant_date_picker:
+          getOcrData[1]?.text?.co_applicant_date_of_birth,
+        co_applicant_gender: getOcrData[1]?.text["co-applicant_gender"],
+        co_applicant_etin: getOcrData[1]?.text["co-applicant_tin"],
+        co_applicant_other_education_level:
+          getOcrData[1]?.text?.co_applicant_name,
       });
     }
   }, [getOcrData, form]);
@@ -64,10 +61,11 @@ const CoApplicantInformationForm = () => {
       <Row>
         <Col md={12}>
           <Form.Item label="Date of Birth" name="co_applicant_date_picker">
-            <DatePicker
+            {/* <DatePicker
               defaultValue={dayjs("01-01-2015", dateFormat)}
               format={dateFormat}
-            />
+            /> */}
+            <Input />
           </Form.Item>
         </Col>
         <Col md={12}>

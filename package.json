@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "next build && pm2 startOrRestart ecosystem.config.js",
     "lint": "next lint"
   },
   "dependencies": {

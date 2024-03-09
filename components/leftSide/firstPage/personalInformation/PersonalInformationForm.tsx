@@ -36,6 +36,7 @@ const PersonalInformationForm = () => {
         mother_name: getOcrData[0]?.text?.applicant_mother_name,
         father_name: getOcrData[0]?.text?.applicant_father_name,
         gender: getOcrData[0]?.text?.applicant_gender,
+        date_of_birth: getOcrData[0]?.text?.applicant_date_of_birth,
         marital_status: getOcrData[0]?.text?.applicant_married_status,
         employment_status: getOcrData[0]?.text?.applicant_employement_status,
         spouse_name: getOcrData[0]?.text?.applicant_spouse_name,
@@ -70,11 +71,12 @@ const PersonalInformationForm = () => {
       </Form.Item>
       <Row>
         <Col md={12}>
-          <Form.Item label="Date of Birth" name="date_picker">
-            <DatePicker
+          <Form.Item label="Date of Birth" name="date_of_birth">
+            {/* <DatePicker
               defaultValue={dayjs("01-01-2015", dateFormat)}
               format={dateFormat}
-            />
+            /> */}
+            <Input />
           </Form.Item>
         </Col>
         <Col md={12}>

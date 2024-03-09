@@ -9,6 +9,10 @@ import CoApplicantInformationCollapse from "./secondPage/coApplicantInformation/
 import ProfessionalInformationSHCollapse from "./secondPage/professionalInformation_SH/ProfessionalInformationSHCollapse";
 import ProfessionalInformationBPCollapse from "./secondPage/professionalInformation_BP_SE/ProfessionalInformationBPCollapse";
 import ProfessionalInformationOtherCollapse from "./secondPage/professionalInformation_others/ProfessionalInformationOtherCollapse";
+import FinancialInformationCollapse from "./thirdPage/financialInformation/FinancialInformationCollapse";
+import BankAccountDetailsCollapse from "./thirdPage/bankAccountDetails.tsx/BankAccountDetailsCollapse";
+import LoanWithBankCollapse from "./thirdPage/loanWithBankFinancial/loanWithBankCollapse";
+import AppliedForLoanTakeCollapse from "./thirdPage/appliedForLoanTake/appliedForLoanTakeCollapse";
 
 const onFinish = (values: any) => {
   const fieldsValue = {
@@ -75,6 +79,10 @@ const IndexLeftPanel = () => {
           <ProfessionalInformationSHCollapse />
           <ProfessionalInformationBPCollapse />
           <ProfessionalInformationOtherCollapse />
+          <FinancialInformationCollapse />
+          <BankAccountDetailsCollapse />
+          <LoanWithBankCollapse />
+          <AppliedForLoanTakeCollapse />
           {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
               Submit

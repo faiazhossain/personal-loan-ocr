@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, DatePicker, Form, Input, Radio, Row, Space } from "antd";
 import dayjs from "dayjs";
 import "animate.css";
+import { useSelector } from "react-redux";
 
 type FieldType = {
   sh_present_employer_name?: string;
@@ -20,12 +21,30 @@ type FieldType = {
 const dateFormat = "DD-MM-YYYY";
 const ProfessionalInformationSHForm = () => {
   // States
+  const form = Form.useFormInstance();
   const [showOtherInput, setShowOtherInput] = useState(false);
-
+  const getOcrData = useSelector((state: any) => state.ocr.ocrData);
   const handleEducationLevelChange = (e: any) => {
     setShowOtherInput(e.target.value === "Others");
   };
-
+  useEffect(() => {
+    if (getOcrData.length > 0) {
+      form.setFieldsValue({
+        sh_present_employer_name: getOcrData[1]?.text?.applicant_employeer,
+        sh_present_employer_address:
+          getOcrData[1]?.text?.applicant_employeer_address,
+        // sh_previous_employer_name: getOcrData[1]?.text?.applicant_company_name,
+        // sh_department: getOcrData[1]?.text?.applicant_company_name,
+        // sh_designation: getOcrData[1]?.text?.applicant_company_name,
+        // sh_current_year: getOcrData[1]?.text?.applicant_company_name,
+        // sh_current_month: getOcrData[1]?.text?.applicant_company_name,
+        // sh_previous_year: getOcrData[1]?.text?.applicant_company_name,
+        // sh_previous_month: getOcrData[1]?.text?.applicant_company_name,
+        // sh_contact_phone_number: getOcrData[1]?.text?.applicant_company_name,
+        // sh_ext_no: getOcrData[1]?.text?.applicant_company_name,
+      });
+    }
+  }, [getOcrData, form]);
   return (
     <>
       <Form.Item<FieldType>
@@ -68,16 +87,14 @@ const ProfessionalInformationSHForm = () => {
         </Col>
       </Row>
 
+      <Form.Item name="" label="Employment Status">
+        <Radio.Group>
+          <Radio value="Permanent">Permanent</Radio>
+          <Radio value="Contractual">Contractual</Radio>
+        </Radio.Group>
+      </Form.Item>
 
-      
-          <Form.Item name="" label="Employment Status">
-            <Radio.Group>
-              <Radio value="Permanent">Permanent</Radio>
-              <Radio value="Contractual">Contractual</Radio>
-            </Radio.Group>
-          </Form.Item>
-
-        <label htmlFor="gender">Length of Service with Current Employer</label>
+      <label htmlFor="gender">Length of Service with Current Employer</label>
       <Row>
         <Col md={12}>
           <Form.Item<FieldType>
@@ -100,7 +117,7 @@ const ProfessionalInformationSHForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      
+
       <Row>
         <Col md={12}>
           <Form.Item<FieldType>
