@@ -8,7 +8,7 @@ import axios from "axios";
 import { API } from "../../../../app.config";
 import { setOcrData } from "../../../../redux/slices/ocrSlice";
 import { getOcrData } from "../../../../redux/actions/mainActions";
-
+import { message, Space } from "antd";
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 
 const getBase64 = (file: FileType): Promise<string> =>
@@ -63,6 +63,24 @@ const UploadImage = () => {
     dispatch(imageData(newFiles));
     setFileList(newFileList);
   };
+
+  // Success and Error message
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Data placed successfully!",
+    });
+  };
+
+  const error = () => {
+    messageApi.open({
+      type: "error",
+      content: "Error in Data fetching!",
+    });
+  };
+
   const handleSubmit = () => {
     if (fileList.length === 0) {
       // Handle the case where no file is selected
@@ -96,15 +114,14 @@ const UploadImage = () => {
             return 0; // Keep the order unchanged
           }
         });
-        // console.log(rearrangedArray, "faiaz");
         dispatch(setOcrData(rearrangedArray));
         setLoadings(false);
+        success();
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        console.log("e");
+        setLoadings(false);
+        error();
       });
   };
 
@@ -123,10 +140,8 @@ const UploadImage = () => {
 
   return (
     <>
+      {contextHolder}
       <Upload
-        // style={{ height: "2000px", width: "2000px" }}
-        // action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-        // style={{ background: "red" }}
         listType="picture-card"
         fileList={fileList}
         onPreview={handlePreview}

@@ -12,7 +12,7 @@ const items: CollapseProps["items"] = [
 
 const PersonalInformationCollapse: React.FC = () => {
   const onChange = (key: string | string[]) => {
-    console.log(key);
+    // console.log(key);
   };
 
   return (

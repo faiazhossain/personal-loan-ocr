@@ -1,18 +1,19 @@
 import React from "react";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
-import ContactDetailsForm from "./ContactDetailsForm";
+import ReferenceForm from "./ReferenceForm";
+
 const items: CollapseProps["items"] = [
   {
     key: "1",
-    label: "B. Contact Details",
-    children: <ContactDetailsForm />,
+    label: "K. Reference (Immediate Relatives Preffered)",
+    children: <ReferenceForm />,
   },
 ];
 
-const ContactDetails: React.FC = () => {
+const ReferenceCollapse: React.FC = () => {
   const onChange = (key: string | string[]) => {
-    // console.log(key);
+    console.log(key);
   };
 
   return (
@@ -20,4 +21,4 @@ const ContactDetails: React.FC = () => {
   );
 };
 
-export default ContactDetails;
+export default ReferenceCollapse;
