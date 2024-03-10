@@ -5,7 +5,8 @@ import LoanWithBankForm from "./loanWithBankForm";
 const items: CollapseProps["items"] = [
   {
     key: "1",
-    label: "G. Financial Information",
+    label:
+      "I. Loan with Bank(s)/Financial Institution(s)/Employer(Personal and Business Loan)",
     children: <LoanWithBankForm></LoanWithBankForm>,
   },
 ];

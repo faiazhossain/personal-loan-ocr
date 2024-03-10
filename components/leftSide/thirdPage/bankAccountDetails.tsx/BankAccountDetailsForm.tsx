@@ -22,15 +22,12 @@ const BankAccountDetailsForm = () => {
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
-        co_applicant_full_name: getOcrData[1]?.text?.co_applicant_name,
-        co_applicant_mother_name: getOcrData[1]?.text?.co_applicant_mother_name,
-        co_applicant_father_name: getOcrData[1]?.text?.co_applicant_father_name,
-        co_applicant_date_picker:
-          getOcrData[1]?.text?.co_applicant_date_of_birth,
-        co_applicant_gender: getOcrData[1]?.text["co-applicant_gender"],
-        co_applicant_etin: getOcrData[1]?.text["co-applicant_tin"],
-        co_applicant_other_education_level:
-          getOcrData[1]?.text?.co_applicant_name,
+        banks_name: getOcrData[2]?.text?.applicant_bank_name_01,
+        type_of_account: getOcrData[2]?.text?.applicant_bank_acc_type_01,
+        account_no: getOcrData[2]?.text?.applicant_bank_acc_number_01,
+        banks_name2: getOcrData[2]?.text?.applicant_bank_name_02,
+        type_of_account2: getOcrData[2]?.text?.applicant_bank_acc_type_02,
+        account_no2: getOcrData[2]?.text?.applicant_bank_acc_number_02,
       });
     }
   }, [getOcrData, form]);

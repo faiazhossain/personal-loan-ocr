@@ -23,28 +23,17 @@ type FieldType = {
 const dateFormat = "DD-MM-YYYY";
 const LoanWithBankForm = () => {
   // States
-  // const [showOtherInput, setShowOtherInput] = useState(false);
-  // const getOcrData = useSelector((state: any) => state.ocr.ocrData);
-  // const handleEducationLevelChange = (e: any) => {
-  //   setShowOtherInput(e.target.value === "Others");
-  // };
-  // useEffect(() => {
-  //   if (getOcrData.length > 0) {
-  //     form.setFieldsValue({
-  //       full_name: getOcrData[0]?.text?.applicant_name,
-  //       mother_name: getOcrData[0]?.text?.applicant_mother_name,
-  //       father_name: getOcrData[0]?.text?.applicant_father_name,
-  //       gender: getOcrData[0]?.text?.applicant_gender,
-  //       date_of_birth: getOcrData[0]?.text?.applicant_date_of_birth,
-  //       marital_status: getOcrData[0]?.text?.applicant_married_status,
-  //       employment_status: getOcrData[0]?.text?.applicant_employement_status,
-  //       spouse_name: getOcrData[0]?.text?.applicant_spouse_name,
-  //       spouse_mobile_phone: getOcrData[0]?.text?.applicant_spouse_number,
-  //       spouse_profession: getOcrData[0]?.text?.applicant_spouse_profession,
-  //     });
-  //   }
-  // }, [getOcrData, form]);
+  const [showOtherInput, setShowOtherInput] = useState(false);
+  const getOcrData = useSelector((state: any) => state.ocr.ocrData);
+  const handleEducationLevelChange = (e: any) => {
+    setShowOtherInput(e.target.value === "Others");
+  };
+  useEffect(() => {
+    if (getOcrData.length > 0) {
+    }
+  }, [getOcrData]);
 
+  console.log(getOcrData[2]?.tables[1][0][0]);
   return (
     <>
       <Row>
@@ -63,28 +52,28 @@ const LoanWithBankForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[1][1][0]}</td>
+                <td>{getOcrData[2]?.tables[1][1][1]}</td>
+                <td>{getOcrData[2]?.tables[1][1][2]}</td>
+                <td>{getOcrData[2]?.tables[1][1][3]}</td>
+                <td>{getOcrData[2]?.tables[1][1][4]}</td>
+                <td>{getOcrData[2]?.tables[1][1][5]}</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[1][2][0]}</td>
+                <td>{getOcrData[2]?.tables[1][2][1]}</td>
+                <td>{getOcrData[2]?.tables[1][2][2]}</td>
+                <td>{getOcrData[2]?.tables[1][2][3]}</td>
+                <td>{getOcrData[2]?.tables[1][2][4]}</td>
+                <td>{getOcrData[2]?.tables[1][2][5]}</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[1][3][0]}</td>
+                <td>{getOcrData[2]?.tables[1][3][1]}</td>
+                <td>{getOcrData[2]?.tables[1][3][2]}</td>
+                <td>{getOcrData[2]?.tables[1][3][3]}</td>
+                <td>{getOcrData[2]?.tables[1][3][4]}</td>
+                <td>{getOcrData[2]?.tables[1][3][5]}</td>
               </tr>
             </tbody>
           </table>
@@ -103,25 +92,18 @@ const LoanWithBankForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[2][1][0]}</td>
+                <td>{getOcrData[2]?.tables[2][1][1]}</td>
+                <td>{getOcrData[2]?.tables[2][1][2]}</td>
+                <td>{getOcrData[2]?.tables[2][1][3]}</td>
+                <td>{getOcrData[2]?.tables[2][1][4]}</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[2][2][0]}</td>
+                <td>{getOcrData[2]?.tables[2][2][1]}</td>
+                <td>{getOcrData[2]?.tables[2][2][2]}</td>
+                <td>{getOcrData[2]?.tables[2][2][3]}</td>
+                <td>{getOcrData[2]?.tables[2][2][4]}</td>
               </tr>
             </tbody>
           </table>

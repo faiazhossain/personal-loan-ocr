@@ -26,28 +26,34 @@ const ReferenceForm = () => {
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
-        reference_full_name: getOcrData[0]?.text?.applicant_present_address,
-        reference_relationship: getOcrData[0]?.text?.applicant_present_address,
+        reference_full_name: getOcrData[2]?.tables?.applicant_present_address,
+        reference_relationship:
+          getOcrData[2]?.tables?.applicant_present_address,
         reference_residence_address:
-          getOcrData[0]?.text?.applicant_present_address,
-        reference_work_address: getOcrData[0]?.text?.applicant_present_address,
-        reference_number_land: getOcrData[0]?.text?.applicant_present_address,
-        reference_number_mobile: getOcrData[0]?.text?.applicant_present_address,
-        reference_full_name2: getOcrData[0]?.text?.applicant_present_address,
-        reference_relationship2: getOcrData[0]?.text?.applicant_present_address,
+          getOcrData[2]?.tables?.applicant_present_address,
+        reference_work_address:
+          getOcrData[2]?.tables?.applicant_present_address,
+        reference_number_land: getOcrData[2]?.tables?.applicant_present_address,
+        reference_number_mobile:
+          getOcrData[2]?.tables?.applicant_present_address,
+        reference_full_name2: getOcrData[2]?.tables?.applicant_present_address,
+        reference_relationship2:
+          getOcrData[2]?.tables?.applicant_present_address,
         reference_residence_address2:
-          getOcrData[0]?.text?.applicant_present_address,
-        reference_work_address2: getOcrData[0]?.text?.applicant_present_address,
-        reference_number_land2: getOcrData[0]?.text?.applicant_present_address,
+          getOcrData[2]?.tables?.applicant_present_address,
+        reference_work_address2:
+          getOcrData[2]?.tables?.applicant_present_address,
+        reference_number_land2:
+          getOcrData[2]?.tables?.applicant_present_address,
         reference_number_mobile2:
-          getOcrData[0]?.text?.applicant_present_address,
+          getOcrData[2]?.tables?.applicant_present_address,
       });
     }
   }, [getOcrData, form]);
   const handleEducationLevelChange = (e: any) => {
     setShowOtherInput(e.target.value === "Others");
   };
-
+  // adsfla
   return (
     <>
       <Form.Item<FieldType> label="(1) Full Name" name="reference_full_name">

@@ -32,7 +32,7 @@ const FinancialInformationForm = () => {
     if (getOcrData.length > 0) {
     }
   }, [getOcrData]);
-
+  console.log(getOcrData[2]?.tables[0][2][1]);
   return (
     <>
       <Row>
@@ -48,34 +48,34 @@ const FinancialInformationForm = () => {
             <tbody>
               <tr>
                 <td>Gross Monthly Salary/Income</td>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][2][1]}</td>
+                <td>{getOcrData[2]?.tables[0][2][2]}</td>
               </tr>
               <tr>
                 <td>Spouse&apos;s Salary/Income</td>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][3][1]}</td>
+                <td>{getOcrData[2]?.tables[0][3][2]}</td>
               </tr>
               <tr>
                 <td>Rent Income</td>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][4][1]}</td>
+                <td>{getOcrData[2]?.tables[0][4][2]}</td>
               </tr>
               <tr>
                 <td>Interest Income</td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][5][1]}</td>
+                <td>{getOcrData[2]?.tables[0][5][2]}</td>
               </tr>
               <tr></tr>
               <tr>
                 <td>Other Income</td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][6][1]}</td>
+                <td>{getOcrData[2]?.tables[0][6][2]}</td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][7][1]}</td>
+                <td>{getOcrData[2]?.tables[0][7][2]}</td>
               </tr>
             </tbody>
           </table>
@@ -91,35 +91,35 @@ const FinancialInformationForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Gross Monthly Salary/Income</td>
-                <td></td>
-                <td></td>
+                <td>Rent & Utility</td>
+                <td>{getOcrData[2]?.tables[0][2][4]}</td>
+                <td>{getOcrData[2]?.tables[0][2][5]}</td>
               </tr>
               <tr>
-                <td>Spouse&apos;s Salary/Income</td>
-                <td></td>
-                <td></td>
+                <td>Food & Clothing</td>
+                <td>{getOcrData[2]?.tables[0][3][4]}</td>
+                <td>{getOcrData[2]?.tables[0][3][5]}</td>
               </tr>
               <tr>
-                <td>Rent Income</td>
-                <td></td>
-                <td></td>
+                <td>Education</td>
+                <td>{getOcrData[2]?.tables[0][4][4]}</td>
+                <td>{getOcrData[2]?.tables[0][4][5]}</td>
               </tr>
               <tr>
-                <td>Interest Income</td>
-                <td></td>
-                <td></td>
+                <td>Loan Repayment (if any)</td>
+                <td>{getOcrData[2]?.tables[0][5][4]}</td>
+                <td>{getOcrData[2]?.tables[0][5][5]}</td>
               </tr>
               <tr></tr>
               <tr>
-                <td>Other Income</td>
-                <td></td>
-                <td></td>
+                <td>Miscellaneous</td>
+                <td>{getOcrData[2]?.tables[0][6][4]}</td>
+                <td>{getOcrData[2]?.tables[0][6][5]}</td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td></td>
-                <td></td>
+                <td>{getOcrData[2]?.tables[0][7][4]}</td>
+                <td>{getOcrData[2]?.tables[0][7][5]}</td>
               </tr>
             </tbody>
           </table>
