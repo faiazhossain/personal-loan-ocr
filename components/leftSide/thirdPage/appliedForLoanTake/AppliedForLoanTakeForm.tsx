@@ -52,9 +52,9 @@ const AppliedForLoanTakeForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
-                <td>{getOcrData[0]?.text?.applicant_name}</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
