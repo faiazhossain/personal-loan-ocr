@@ -33,7 +33,7 @@ const LoanWithBankForm = () => {
     }
   }, [getOcrData]);
 
-  console.log(getOcrData[2]?.tables[1][0][0]);
+  // console.log(getOcrData[2]?.tables[1][0][0]);
   return (
     <>
       <Row>
@@ -52,28 +52,28 @@ const LoanWithBankForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td>{getOcrData[2]?.tables[1][1][0] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][1][1] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][1][2] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][1][3] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][1][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][1][5] || ""}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[0]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[1]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[2]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[3]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[4]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[1]?.[5]}</td>
               </tr>
               <tr>
-                <td>{getOcrData[2]?.tables[1][2][0] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][2][1] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][2][2] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][2][3] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][2][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][2][5] || ""}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[0]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[1]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[2]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[3]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[4]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[2]?.[5]}</td>
               </tr>
               <tr>
-                <td>{getOcrData[2]?.tables[1][3][0] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][3][1] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][3][2] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][3][3] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][3][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[1][3][5] || ""}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[0]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[1]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[2]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[3]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[4]}</td>
+                <td>{getOcrData[2]?.tables[1]?.[3]?.[5]}</td>
               </tr>
             </tbody>
           </table>
@@ -92,18 +92,18 @@ const LoanWithBankForm = () => {
             </thead>
             <tbody>
               <tr>
-                <td>{getOcrData[2]?.tables[2][1][0] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][1][1] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][1][2] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][1][3] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][1][4] || ""}</td>
+                <td>{getOcrData[2]?.tables[2]?.[1]?.[0]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[1]?.[1]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[1]?.[2]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[1]?.[3]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[1]?.[4]}</td>
               </tr>
               <tr>
-                <td>{getOcrData[2]?.tables[2][2][0] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][2][1] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][2][2] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][2][3] || ""}</td>
-                <td>{getOcrData[2]?.tables[2][2][4] || ""}</td>
+                <td>{getOcrData[2]?.tables[2]?.[2]?.[0]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[2]?.[1]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[2]?.[2]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[2]?.[3]}</td>
+                <td>{getOcrData[2]?.tables[2]?.[2]?.[4]}</td>
               </tr>
             </tbody>
           </table>

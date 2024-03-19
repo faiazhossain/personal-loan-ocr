@@ -58,7 +58,7 @@ const UploadImage = () => {
       }
       return newFile.url || (newFile.preview as string);
     });
-
+    console.log(fileList, "fileList");
     const newFiles = await Promise.all(promises);
     dispatch(imageData(newFiles));
     setFileList(newFileList);
@@ -104,17 +104,19 @@ const UploadImage = () => {
         },
       })
       .then((res) => {
-        // Rearrange the array
-        const rearrangedArray = res.data.results.sort((a: any, b: any) => {
-          if (a.tables.length === 0) {
-            return -1; // `a` comes before `b`
-          } else if (b.tables.length === 0) {
-            return 1; // `b` comes before `a`
-          } else {
-            return 0; // Keep the order unchanged
-          }
+        // Sort the results array based on the presence of applicant, co-applicant names, and applicant reference
+        const sortedResults = res.data.results.sort((a: any, b: any) => {
+          if (a.text.applicant_name !== null) return -1; // Place object with applicant name first
+          if (b.text.applicant_name !== null) return 1;
+          if (a.text.co_applicant_name !== null) return -1; // Place object with co-applicant name second
+          if (b.text.co_applicant_name !== null) return 1;
+          if (a.text.applicant_reference !== null) return -1; // Place object with applicant reference third
+          if (b.text.applicant_reference !== null) return 1;
+          return 0;
         });
-        dispatch(setOcrData(rearrangedArray));
+
+        console.log(sortedResults, "Faiaz");
+        dispatch(setOcrData(sortedResults));
         setLoadings(false);
         success();
       })

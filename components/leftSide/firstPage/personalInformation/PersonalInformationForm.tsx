@@ -40,8 +40,9 @@ const PersonalInformationForm = () => {
         marital_status: getOcrData[0]?.text?.applicant_married_status,
         employment_status: getOcrData[0]?.text?.applicant_employement_status,
         spouse_name: getOcrData[0]?.text?.applicant_spouse_name,
-        spouse_mobile_phone: getOcrData[0]?.text?.applicant_spouse_number,
+        spouse_mobile_phone: getOcrData[0]?.text?.applicant_mobile,
         spouse_profession: getOcrData[0]?.text?.applicant_spouse_profession,
+        spouse_Work_Address: getOcrData[0]?.text?.applicant_spouse_work_address,
       });
     }
   }, [getOcrData, form]);

@@ -48,68 +48,104 @@ const FinancialInformationForm = () => {
               <tr>
                 <td>Gross Monthly Salary/Income</td>
                 <td>
-                  {getOcrData[2]?.tables[0][2][1] &&
-                    getOcrData[2]?.tables[0][2][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][1] &&
+                    getOcrData[2]?.tables[0][1][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][2][2] &&
-                    getOcrData[2]?.tables[0][2][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][1] &&
+                    getOcrData[2]?.tables[0][1][2]}
                 </td>
               </tr>
               <tr>
                 <td>Spouse&apos;s Salary/Income</td>
                 <td>
-                  {getOcrData[2]?.tables[0][3][1] &&
-                    getOcrData[2]?.tables[0][3][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][2] &&
+                    getOcrData[2]?.tables[0][2][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][3][2] &&
-                    getOcrData[2]?.tables[0][3][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][2] &&
+                    getOcrData[2]?.tables[0][2][2]}
                 </td>
               </tr>
               <tr>
                 <td>Rent Income</td>
                 <td>
-                  {getOcrData[2]?.tables[0][4][1] &&
-                    getOcrData[2]?.tables[0][4][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][3] &&
+                    getOcrData[2]?.tables[0][3][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][4][2] &&
-                    getOcrData[2]?.tables[0][4][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][3] &&
+                    getOcrData[2]?.tables[0][3][2]}
                 </td>
               </tr>
               <tr>
                 <td>Interest Income</td>
                 <td>
-                  {getOcrData[2]?.tables[0][5][1] &&
-                    getOcrData[2]?.tables[0][5][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][4] &&
+                    getOcrData[2]?.tables[0][4][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][5][2] &&
-                    getOcrData[2]?.tables[0][5][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][4] &&
+                    getOcrData[2]?.tables[0][4][2]}
                 </td>
               </tr>
               <tr></tr>
               <tr>
                 <td>Other Income</td>
                 <td>
-                  {getOcrData[2]?.tables[0][6][1] &&
-                    getOcrData[2]?.tables[0][6][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][5] &&
+                    getOcrData[2]?.tables[0][5][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][6][2] &&
-                    getOcrData[2]?.tables[0][6][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][5] &&
+                    getOcrData[2]?.tables[0][5][2]}
                 </td>
               </tr>
               <tr>
                 <td>Total</td>
                 <td>
-                  {getOcrData[2]?.tables[0][7][1] &&
-                    getOcrData[2]?.tables[0][7][1]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][6] &&
+                    getOcrData[2]?.tables[0][6][1]}
                 </td>
                 <td>
-                  {getOcrData[2]?.tables[0][7][2] &&
-                    getOcrData[2]?.tables[0][7][2]}
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][6] &&
+                    getOcrData[2]?.tables[0][6][2]}
                 </td>
               </tr>
             </tbody>
@@ -127,34 +163,102 @@ const FinancialInformationForm = () => {
             <tbody>
               <tr>
                 <td>Rent & Utility</td>
-                <td>{getOcrData[2]?.tables[0][2][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][2][5] || ""}</td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][1] &&
+                    getOcrData[2]?.tables[0][1][4]}
+                </td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][1] &&
+                    getOcrData[2]?.tables[0][1][5]}
+                </td>
               </tr>
               <tr>
                 <td>Food & Clothing</td>
-                <td>{getOcrData[2]?.tables[0][3][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][3][5] || ""}</td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][2] &&
+                    getOcrData[2]?.tables[0][2][4]}
+                </td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][2] &&
+                    getOcrData[2]?.tables[0][2][5]}
+                </td>
               </tr>
               <tr>
                 <td>Education</td>
-                <td>{getOcrData[2]?.tables[0][4][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][4][5] || ""}</td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][3] &&
+                    getOcrData[2]?.tables[0][3][4]}
+                </td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][3] &&
+                    getOcrData[2]?.tables[0][3][5]}
+                </td>
               </tr>
               <tr>
                 <td>Loan Repayment (if any)</td>
-                <td>{getOcrData[2]?.tables[0][5][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][5][5] || ""}</td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][4] &&
+                    getOcrData[2]?.tables[0][4][4]}
+                </td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][4] &&
+                    getOcrData[2]?.tables[0][4][5]}
+                </td>
               </tr>
               <tr></tr>
               <tr>
                 <td>Miscellaneous</td>
-                <td>{getOcrData[2]?.tables[0][6][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][6][5] || ""}</td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][5] &&
+                    getOcrData[2]?.tables[0][5][4]}
+                </td>
+                <td>
+                  {getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][5] &&
+                    getOcrData[2]?.tables[0][5][5]}
+                </td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td>{getOcrData[2]?.tables[0][7][4] || ""}</td>
-                <td>{getOcrData[2]?.tables[0][7][5] || ""}</td>
+                <td>
+                  {(getOcrData[2]?.tables[0][6] &&
+                    getOcrData[2]?.tables[0][6][4]) ||
+                    ""}
+                </td>
+                <td>
+                  {(getOcrData[2]?.tables[0][6] &&
+                    getOcrData[2]?.tables[0][6][5]) ||
+                    ""}
+                </td>
               </tr>
             </tbody>
           </table>
