@@ -27,6 +27,7 @@ const ProfessionalInformationBPForm = () => {
         bp_company_name: getOcrData[1]?.text?.applicant_company_name,
         bp_office_address: getOcrData[1]?.text?.applicant_office_address,
         bp_nature_of_business: getOcrData[1]?.text?.applicant_nature_business,
+        bp_contact_phone_number: getOcrData[1]?.text?.applicant_company_number,
       });
     }
   }, [getOcrData, form]);

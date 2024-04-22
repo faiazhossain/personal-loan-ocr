@@ -30,6 +30,8 @@ const CoApplicantInformationForm = () => {
           getOcrData[1]?.text?.co_applicant_date_of_birth,
         co_applicant_gender: getOcrData[1]?.text["co-applicant_gender"],
         co_applicant_etin: getOcrData[1]?.text["co-applicant_tin"],
+        co_applicant_identification_document:
+          getOcrData[1]?.text["co-applicant_voter_id"],
         co_applicant_other_education_level:
           getOcrData[1]?.text?.co_applicant_name,
       });

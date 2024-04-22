@@ -26,27 +26,25 @@ const ReferenceForm = () => {
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
-        reference_full_name: getOcrData[2]?.tables?.applicant_present_address,
+        reference_full_name: getOcrData[2]?.text?.applicant_reference,
         reference_relationship:
-          getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_reference_relationship,
         reference_residence_address:
-          getOcrData[2]?.tables?.applicant_present_address,
-        reference_work_address:
-          getOcrData[2]?.tables?.applicant_present_address,
-        reference_number_land: getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_reference_address,
+        reference_work_address: getOcrData[2]?.text?.applicant_work_address,
+        reference_number_land: getOcrData[2]?.text?.applicant_present_address,
         reference_number_mobile:
-          getOcrData[2]?.tables?.applicant_present_address,
-        reference_full_name2: getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_reference_mobile,
+        reference_full_name2: getOcrData[2]?.text?.applicant_present_address2,
         reference_relationship2:
-          getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_present_address2,
         reference_residence_address2:
-          getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_present_address2,
         reference_work_address2:
-          getOcrData[2]?.tables?.applicant_present_address,
-        reference_number_land2:
-          getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_present_address2,
+        reference_number_land2: getOcrData[2]?.text?.applicant_present_address2,
         reference_number_mobile2:
-          getOcrData[2]?.tables?.applicant_present_address,
+          getOcrData[2]?.text?.applicant_present_address2,
       });
     }
   }, [getOcrData, form]);

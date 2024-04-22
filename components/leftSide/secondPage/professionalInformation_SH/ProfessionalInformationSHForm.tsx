@@ -33,14 +33,14 @@ const ProfessionalInformationSHForm = () => {
         sh_present_employer_name: getOcrData[1]?.text?.applicant_employeer,
         sh_present_employer_address:
           getOcrData[1]?.text?.applicant_employeer_address,
-        // sh_previous_employer_name: getOcrData[1]?.text?.applicant_company_name,
-        // sh_department: getOcrData[1]?.text?.applicant_company_name,
+        sh_previous_employer_name: getOcrData[1]?.text?.applicant_company_name,
+        sh_department: getOcrData[1]?.text?.applicant_department,
         // sh_designation: getOcrData[1]?.text?.applicant_company_name,
-        // sh_current_year: getOcrData[1]?.text?.applicant_company_name,
+        sh_current_year: getOcrData[1]?.text?.applicant_length_of_service,
         // sh_current_month: getOcrData[1]?.text?.applicant_company_name,
         // sh_previous_year: getOcrData[1]?.text?.applicant_company_name,
         // sh_previous_month: getOcrData[1]?.text?.applicant_company_name,
-        // sh_contact_phone_number: getOcrData[1]?.text?.applicant_company_name,
+        sh_contact_phone_number: getOcrData[1]?.text?.applicant_company_number,
         // sh_ext_no: getOcrData[1]?.text?.applicant_company_name,
       });
     }

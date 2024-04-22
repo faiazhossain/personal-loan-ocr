@@ -21,7 +21,6 @@ const ContactDetailsForm = () => {
   // States
   const [showOtherInput, setShowOtherInput] = useState(false);
   const getOcrData = useSelector((state: any) => state.ocr.ocrData);
-  console.log(getOcrData && getOcrData, "getOcrData");
   useEffect(() => {
     if (getOcrData.length > 0) {
       form.setFieldsValue({
@@ -32,9 +31,9 @@ const ContactDetailsForm = () => {
         gender: getOcrData[0]?.text?.applicant_gender,
         permanent_address: getOcrData[0]?.text?.applicant_permanent_address,
         work_address: getOcrData[0]?.text?.applicant_work_address,
-        number_home: getOcrData[0]?.text?.applicant_work_number,
+        number_home: getOcrData[0]?.text?.applicant_work_number2,
         number_office: getOcrData[0]?.text?.applicant_work_number2,
-        number_mobile: getOcrData[0]?.text?.applicant_mobile,
+        number_mobile: getOcrData[0]?.text?.applicant_work_number,
         applicant_email: getOcrData[0]?.text?.applicant_email,
       });
     }
