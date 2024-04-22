@@ -20,7 +20,6 @@ const Index = () => {
         style={{
           textAlign: "center",
           textTransform: "uppercase",
-          color: "green",
         }}
       >
         Personal loan application form
