@@ -17,7 +17,11 @@ const Index = () => {
     <div>
       <h1
         className="headerText"
-        style={{ textAlign: "center", textTransform: "uppercase" }}
+        style={{
+          textAlign: "center",
+          textTransform: "uppercase",
+          color: "red",
+        }}
       >
         Personal loan application form
       </h1>
