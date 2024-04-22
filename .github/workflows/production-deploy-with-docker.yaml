@@ -40,9 +40,9 @@ jobs:
       - name: Run deployment command
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secrets.SSH_HOST_PRODUCTION}}
-          username: ${{ secrets.SSH_USER_PRODUCTION }}
-          key: ${{ secrets.SSH_KEY_PRODUCTION }}
+          host: ${{ secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd /mnt/personal-loan-form/
             docker-compose down
