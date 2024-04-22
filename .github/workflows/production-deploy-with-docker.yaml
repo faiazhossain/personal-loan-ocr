@@ -45,6 +45,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /mnt/personal-loan-form/
+            ls -l
             docker-compose down
             docker image prune -af
             TAG=main docker-compose pull
