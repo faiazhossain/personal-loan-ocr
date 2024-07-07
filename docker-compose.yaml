@@ -1,9 +1,11 @@
-version: "3.7"
 services:
   personal-loan:
-    image: faiazhossain10/personal-loan:{TAG}
+    image: ocr/ocr:dev
     # image: personal-loan
     container_name: personal-loan
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
       - "4003:3000"

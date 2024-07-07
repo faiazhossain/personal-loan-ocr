@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.0",
     "@reduxjs/toolkit": "^2.2.1",
     "animate.css": "^4.1.1",
     "antd": "^5.15.0",
