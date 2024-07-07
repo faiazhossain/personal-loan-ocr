@@ -35,16 +35,16 @@ const ReferenceForm = () => {
         reference_number_land: getOcrData[2]?.text?.applicant_present_address,
         reference_number_mobile:
           getOcrData[2]?.text?.applicant_reference_mobile,
-        reference_full_name2: getOcrData[2]?.text?.applicant_present_address2,
+        reference_full_name2: getOcrData[2]?.text?.applicant_reference_2,
         reference_relationship2:
-          getOcrData[2]?.text?.applicant_present_address2,
+          getOcrData[2]?.text?.applicant_reference_2_relation,
         reference_residence_address2:
-          getOcrData[2]?.text?.applicant_present_address2,
+          getOcrData[2]?.text?.applicant_reference_2_present_addres,
         reference_work_address2:
-          getOcrData[2]?.text?.applicant_present_address2,
+          getOcrData[2]?.text?.applicant_reference_2_work_address,
         reference_number_land2: getOcrData[2]?.text?.applicant_present_address2,
         reference_number_mobile2:
-          getOcrData[2]?.text?.applicant_present_address2,
+          getOcrData[2]?.text?.applicant_reference_2_mobile_number,
       });
     }
   }, [getOcrData, form]);
@@ -78,23 +78,23 @@ const ReferenceForm = () => {
           </Form.Item>
         </Col>
         <Col span={12}>
-          <Form.Item<FieldType> label="Mobile" name="reference_number_land">
+          <Form.Item<FieldType> label="Mobile" name="reference_number_mobile">
             <Input />
           </Form.Item>
         </Col>
       </Row>
       {/* 2nd table */}
-      <Form.Item<FieldType> label="(2) Full Name" name="reference_full_name">
+      <Form.Item<FieldType> label="(2) Full Name" name="reference_full_name2">
         <Input />
       </Form.Item>
-      <Form.Item name="reference_relationship" label="Relationship">
+      <Form.Item name="reference_relationship2" label="Relationship">
         <Input />
       </Form.Item>
-      <Form.Item name="reference_residence_address" label="Residence Address">
+      <Form.Item name="reference_residence_address2" label="Residence Address">
         <Input />
       </Form.Item>
 
-      <Form.Item<FieldType> label="Work Address" name="reference_work_address">
+      <Form.Item<FieldType> label="Work Address" name="reference_work_address2">
         <Input />
       </Form.Item>
 
@@ -102,13 +102,13 @@ const ReferenceForm = () => {
         <Col span={12}>
           <Form.Item<FieldType>
             label="Contact No. Land"
-            name="reference_number_land"
+            name="reference_number_land2"
           >
             <Input />
           </Form.Item>
         </Col>
         <Col span={12}>
-          <Form.Item<FieldType> label="Mobile" name="reference_number_land">
+          <Form.Item<FieldType> label="Mobile" name="reference_number_mobile2">
             <Input />
           </Form.Item>
         </Col>
