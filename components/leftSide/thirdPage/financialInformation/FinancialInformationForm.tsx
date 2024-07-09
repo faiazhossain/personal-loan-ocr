@@ -250,12 +250,18 @@ const FinancialInformationForm = () => {
               <tr>
                 <td>Total</td>
                 <td>
-                  {(getOcrData[2]?.tables[0][6] &&
+                  {(getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][6] &&
                     getOcrData[2]?.tables[0][6][4]) ||
                     ""}
                 </td>
                 <td>
-                  {(getOcrData[2]?.tables[0][6] &&
+                  {(getOcrData &&
+                    getOcrData[2]?.tables &&
+                    getOcrData[2]?.tables[0] &&
+                    getOcrData[2]?.tables[0][6] &&
                     getOcrData[2]?.tables[0][6][5]) ||
                     ""}
                 </td>
